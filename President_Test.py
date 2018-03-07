@@ -327,4 +327,4 @@ while True:
 		myfile.write(str(R_points))
 		myfile.close()
 		
-		os.system("python Test_Main_Menu.py")
+		break
