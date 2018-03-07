@@ -73,3 +73,21 @@ def fifaReset():
 	jFifaReset()
 	rFifaReset()
 	vFifaReset()
+def allReset():
+	fifaReset()
+	prezReset()
+def aAllReset():
+	aFifaReset()
+	aPrezReset()
+def jAllReset():
+	jFifaReset()
+	jPrezReset()
+def oAllReset():
+	oFifaReset()
+	oPrezReset()
+def rAllReset():
+	rFifaReset()
+	rPrezReset()	
+def vAllReset():
+	vFifaReset()
+	vPrezReset()		
