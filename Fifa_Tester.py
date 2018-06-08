@@ -7,43 +7,43 @@ raw_input("type anything to start: ")
 os.system('clear')
 
 #Register A_Points_Fifa
-myfile = open('A_Points_Fifa.txt', 'r')
+myfile = open('1_Fifa.txt', 'r')
 a = myfile.read()
 myfile.close()
 
 #Register O_Points
-myfile = open('O_Points_Fifa.txt', 'r')
-o = myfile.read()
+myfile = open('2_Fifa.txt', 'r')
+b = myfile.read()
 myfile.close()
 
 #Register J_Points
-myfile = open('J_Points_Fifa.txt', 'r')
-j = myfile.read()
+myfile = open('3_Fifa.txt', 'r')
+c = myfile.read()
 myfile.close()
 
 #Register V_Points
-myfile = open('V_Points_Fifa.txt', 'r')
-v = myfile.read()
+myfile = open('4_Fifa.txt', 'r')
+d = myfile.read()
 myfile.close()
 
 #Register R_Points
-myfile = open('R_Points_Fifa.txt', 'r')
-r = myfile.read()
+myfile = open('5_Fifa.txt', 'r')
+e = myfile.read()
 myfile.close()
 
 #turn string values into usable int values
-R_points = int(r)
-A_points = int(a)
-O_points = int(o)
-J_points = int(j)
-V_points = int(v)
+first = int(a)
+second = int(b)
+third = int(c)
+fourth = int(d)
+fith = int(e)
 
 #loads the arrays for scoring
-alist = [A_points, "Alexander"]
-olist = [O_points, "Olivia"]
-vlist = [V_points, "Vince"]
-rlist = [R_points, "Rebecca"]
-jlist = [J_points, "Jonathan"]
+first_list = ["First", first]
+second_list = [ "Second", second]
+third_list = [ "Third", third]
+fourth_list = ["Fourth", fourth]
+fifth_list = ["Fifth", fifth]
 
 #Array that stores the teams who won the Fifa World Cup in order
 teams = [
@@ -82,103 +82,92 @@ while True:
 	
 	#If the user would like to test themself
 	if menu == "Take the test":
-		name = raw_input("Please enter your name: ")
-		
-		#Tests the individuals separately so they can have there own scores
-		
-		if name == "Olivia" or "Alexander" or "Jonathan" or "Rebecca" or "Vince":
-			while True:
-				ggez = raw_input("Are you ready? ")
-				if ggez == "yes" or "Yes":
-					break
 			
-			#test setting reset
-			points = 0
-			i = 20;
+		#test setting reset
+		points = 0
+		i = 20;
 			
-			#loops through all the teams
-			while i > 0:
-				QA = raw_input("Who won the " + str(i) + " Fifa World Cup?")
-				if QA == teams[i-1]:
-					print "Correct!"
-					points = points + 1
-				else:
-					print "WRONG!!!"	
-					print teams[i-1]
-				i = i - 1
+		#loops through all the teams
+		while i > 0:
+			QA = raw_input("Who won the " + str(i) + " Fifa World Cup?")
+			if QA == teams[i-1]:
+				print "Correct!"
+				points = points + 1
+			else:
+				print "WRONG!!!"	
+				print teams[i-1]
+			i = i - 1
 			
-			#Scoring
+		#Scoring
 			
-			#Fraction
-			print str(points) + "/20"
+		#Fraction
+		print str(points) + "/20"
 			
-			#Percent
-			percent1 = float(points)/20.0
-			percent2 = int((percent1 * 100)+0.5)
-			print str(percent2) + "%"
+		#Percent
+		percent1 = float(points)/20.0
+		percent2 = int((percent1 * 100)+0.5)
+		print str(percent2) + "%"
 			
-			#Letter grade and funny comment
-			if points >= 15:
-				print "A+"
-				print "You are a Genius, or maybe just a cheater."
-			elif points >= 13:
-				print "A"
-				print "You are a Super Star, or did you have a peek for a few?"
-			elif points >= 11:
-				print "B+"
-				print "Awesome Job! You beat the Creater!"
-			elif points >= 9:
-				print "B"
-				print "Great Job!"
-			elif points >= 7:
-				print "C+"
-				print "You did pretty well!"
-			elif points >= 5:
-				print "C"
-				print "You are starting to get the hang of this!"
-			elif points >= 3:
-				print "D+"
-				print "Go Study and you could get a good score!"
-			elif points >= 2:
-				print "D"
-				print "What kind of football do you think this is?"
-			elif points >= 0:
-				print "F"
-				print "What are you, a rock?"
+		#Letter grade and funny comment
+		if points >= 15:
+			print "A+"
+			print "You are a Genius, or maybe just a cheater."
+		elif points >= 13:
+			print "A"
+			print "You are a Super Star, or did you have a peek for a few?"
+		elif points >= 11:
+			print "B+"
+			print "Awesome Job! You beat the Creater!"
+		elif points >= 9:
+			print "B"
+			print "Great Job!"
+		elif points >= 7:
+			print "C+"
+			print "You did pretty well!"
+		elif points >= 5:
+			print "C"
+			print "You are starting to get the hang of this!"
+		elif points >= 3:
+			print "D+"
+			print "Go Study and you could get a good score!"
+		elif points >= 2:
+			print "D"
+			print "What kind of football do you think this is?"
+		elif points >= 0:
+			print "F"
+			print "What are you, a rock?"
 			
-			#Lets the user choose when to clear screen and go back to menu
-			raw_input("Press anything to continue: ")
-			os.system('clear')
+		#Lets the user choose when to clear screen and go back to menu
+		raw_input("Press anything to continue: ")
+		os.system('clear')
 			
-			#Update scores
-			if name == "Alexander":
-				if A_points < points:
-					A_points = points
-					myfile = open('A_Points.txt', 'w')
-					myfile.write(str(A_points))
-					myfile.close()
-			elif name == "Olivia":
-				if O_points < points:
-					O_points = points
-					myfile = open('O_Points.txt', 'w')
-					myfile.write(str(O_points))
-					myfile.close()
-			elif name == "Jonathan":
-				if J_points < points:
-					J_points = points	
-					myfile = open('J_Points.txt', 'w')
-					myfile.write(str(J_points))
-					myfile.close()
-			elif name == "Vince":
-				if V_points < points:
-					V_points = points
-					myfile = open('V_Points.txt', 'w')
-					myfile.write(str(V_points))
-					myfile.close()
-			elif name == "Rebecca":
-				if R_points < points:
-					R_points = points	
-	
+		#Update scores
+
+		if first < points:
+			first = points
+			myfile = open('1_Fifa.txt', 'w')
+			myfile.write(str(first))
+			myfile.close()
+		if second < points:
+			second = points
+			myfile = open('2_Fifa.txt', 'w')
+			myfile.write(str(second))
+			myfile.close()
+		if third < points:
+			third = points	
+			myfile = open('3_Fifa.txt', 'w')
+			myfile.write(str(third))
+			myfile.close()
+		if fourth < points:
+			fourth = points
+			myfile = open('4_Fifa.txt', 'w')
+			myfile.write(str(fourth))
+			myfile.close()
+		if fifth < points:
+			fifth = points
+			myfile = open('5_Fifa.txt', 'w')
+			myfile.write(str(fifth))
+			myfile.close()	
 	#Same as the regular test, but it doesn't move to the next team if you are wrong and doesn't give the right answer if you are wrong
 	#Also doesn't affect leaderboard 
 	if menu == "Repetition":
@@ -269,29 +258,27 @@ while True:
 	
 	#Shows all of the scores in order
 	if menu == "Read the leaderboard": #Set the stats
-		alist = [A_points, "Alexander"]
-		olist = [O_points, "Olivia"]
-		vlist = [V_points, "Vince"]
-		rlist = [R_points, "Rebecca"]
-		jlist = [J_points, "Jonathan"]
+		first_list = ["First", first]
+		second_list = [ "Second", second]
+		third_list = [ "Third", third]
+		fourth_list = ["Fourth", fourth]
+		fifth_list = ["Fifth", fifth]
 		#Combine the stats
-		leaderboard = [alist,
-		olist,
-		jlist, vlist,
-		 rlist]
-		#Order the stats
-		leaderboard2 = sorted(leaderboard)
+		leaderboard = [first_list,
+		second_list,
+		third_list, fourth_list,
+		 fifth_list]
 		#Print out the stats(negative index is required so that the stats are flipped from asending order into descending order)
 		print "1. "
-		print str(leaderboard2[-1][1]) + " -- " + str(leaderboard2[-1][0])
+		print str(leaderboard[0][0]) + " -- " + str(leaderboard[0][1])
 		print "2. "
-		print str(leaderboard2[-2][1]) + " -- " + str(leaderboard2[-2][0])
+		print str(leaderboard[1][0]) + " -- " + str(leaderboard[1][1])
 		print "3. "
-		print str(leaderboard2[-3][1]) + " -- " + str(leaderboard2[-3][0])
+		print str(leaderboard[2][0]) + " -- " + str(leaderboard[2][1])
 		print "4. "
-		print str(leaderboard2[-4][1]) + " -- " + str(leaderboard2[-4][0])
+		print str(leaderboard[3][0]) + " -- " + str(leaderboard[3][1])
 		print "5. "
-		print str(leaderboard2[-5][1]) + " -- " + str(leaderboard2[-5][0])
+		print str(leaderboard[4][0]) + " -- " + str(leaderboard[4][1])
 		#Moves on when user is ready
 		raw_input("Press anything to continue: ")
 		os.system('clear')
@@ -299,24 +286,24 @@ while True:
 	#Saves current scores and quits program
 	if menu == "Leave":
 		
-		myfile = open('A_Points_Fifa.txt', 'w')
-		myfile.write(str(A_points))
+		myfile = open('1_Fifa.txt', 'w')
+		myfile.write(str(first))
 		myfile.close()
 
-		myfile = open('O_Points_Fifa.txt', 'w')
-		myfile.write(str(O_points))
+		myfile = open('2_Fifa.txt', 'w')
+		myfile.write(str(second))
 		myfile.close()
 
-		myfile = open('J_Points_Fifa.txt', 'w')
-		myfile.write(str(J_points))
+		myfile = open('3_Fifa.txt', 'w')
+		myfile.write(str(third))
 		myfile.close()
 
-		myfile = open('V_Points_Fifa.txt', 'w')
-		myfile.write(str(V_points))
+		myfile = open('4_Fifa.txt', 'w')
+		myfile.write(str(fourth))
 		myfile.close()
 
-		myfile = open('R_Points_Fifa.txt', 'w')
-		myfile.write(str(R_points))
+		myfile = open('5_Fifa.txt', 'w')
+		myfile.write(str(fifth))
 		myfile.close()
 		
 		break
