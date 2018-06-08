@@ -148,22 +148,22 @@ while True:
 			myfile = open('1_Fifa.txt', 'w')
 			myfile.write(str(first))
 			myfile.close()
-		if second < points:
+		elif second < points:
 			second = points
 			myfile = open('2_Fifa.txt', 'w')
 			myfile.write(str(second))
 			myfile.close()
-		if third < points:
+		elif third < points:
 			third = points	
 			myfile = open('3_Fifa.txt', 'w')
 			myfile.write(str(third))
 			myfile.close()
-		if fourth < points:
+		elif fourth < points:
 			fourth = points
 			myfile = open('4_Fifa.txt', 'w')
 			myfile.write(str(fourth))
 			myfile.close()
-		if fifth < points:
+		elif fifth < points:
 			fifth = points
 			myfile = open('5_Fifa.txt', 'w')
 			myfile.write(str(fifth))
