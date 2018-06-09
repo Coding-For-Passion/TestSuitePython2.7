@@ -1,6 +1,6 @@
-#Copyright (c) 2018 Alexander Greco All Rights Reserved.
+# Copyright (c) 2018 Alexander Greco All Rights Reserved.
 
-#Import
+# Import
 import os
 
 # Set window size and get rid of Script Terminal Auto-Prints
@@ -29,19 +29,38 @@ myfile = open('5_Fifa.txt', 'r')
 e = myfile.read()
 myfile.close()
 
+myfile = open('1_Name_Fifa.txt', 'r')
+aa = myfile.read()
+myfile.close()
+
+myfile = open('2_Name_Fifa.txt', 'r')
+bb = myfile.read()
+myfile.close()
+
+myfile = open('3_Name_Fifa.txt', 'r')
+cc = myfile.read()
+myfile.close()
+
+myfile = open('4_Name_Fifa.txt', 'r')
+dd = myfile.read()
+myfile.close()
+
+myfile = open('5_Name_Fifa.txt', 'r')
+ee = myfile.read()
+myfile.close()
 #turn string values into usable int values
 first = int(a)
 second = int(b)
 third = int(c)
 fourth = int(d)
-fith = int(e)
+fifth = int(e)
 
 # loads the arrays for Leaderboard
-first_list = ["First", first]
-second_list = [ "Second", second]
-third_list = [ "Third", third]
-fourth_list = ["Fourth", fourth]
-fifth_list = ["Fifth", fifth]
+first_list = [aa, first]
+second_list = [bb, second]
+third_list = [cc, third]
+fourth_list = [dd, fourth]
+fifth_list = [ee, fifth]
 
 # Array that stores the teams who won the Fifa World Cup in order
 teams = [
@@ -80,7 +99,7 @@ while True:
 
 	# If the user would like to test themself
 	if menu == "Take the test":
-
+		name = raw_input("Name: ")
 		# test setting reset
 		points = 0
 		i = 20;
@@ -146,26 +165,36 @@ while True:
 			myfile = open('1_Fifa.txt', 'w')
 			myfile.write(str(first))
 			myfile.close()
+			first_list[0] = name
+			print "You got 1st place!"
 		elif second < points:
 			second = points
 			myfile = open('2_Fifa.txt', 'w')
 			myfile.write(str(second))
 			myfile.close()
+			second_list[0] = name
+			print "You got 2nd place!"
 		elif third < points:
 			third = points
 			myfile = open('3_Fifa.txt', 'w')
 			myfile.write(str(third))
 			myfile.close()
+			third_list[0] = name
+			print "You got 3rd place!"
 		elif fourth < points:
 			fourth = points
 			myfile = open('4_Fifa.txt', 'w')
 			myfile.write(str(fourth))
 			myfile.close()
+			ffourth_list[0] = name
+			print "You got 4th place!"
 		elif fifth < points:
 			fifth = points
 			myfile = open('5_Fifa.txt', 'w')
 			myfile.write(str(fifth))
 			myfile.close()
+			fifth_list[0] = name
+			print "You got 5th place!"
 	#Same as the regular test, but it doesn't move to the next team if you are wrong and doesn't give the right answer if you are wrong
 	#Also doesn't affect leaderboard
 	if menu == "Repetition":
@@ -256,11 +285,11 @@ while True:
 
 	#Shows leaderboard
 	if menu == "Read the leaderboard": #Set the stats
-		first_list = ["First", first]
-		second_list = [ "Second", second]
-		third_list = [ "Third", third]
-		fourth_list = ["Fourth", fourth]
-		fifth_list = ["Fifth", fifth]
+		first_list[1] = [first]
+		second_list[1] = [second]
+		third_list[1] = [third]
+		fourth_list[1] = [fourth]
+		fifth_list[1] = [fifth]
 
 		#Combine the Leaderboard
 		leaderboard = [first_list,
@@ -269,16 +298,11 @@ while True:
 		 fifth_list]
 
 		#Print out the Leaderboard
-		print "1. "
-		print str(leaderboard[0][0]) + " -- " + str(leaderboard[0][1])
-		print "2. "
-		print str(leaderboard[1][0]) + " -- " + str(leaderboard[1][1])
-		print "3. "
-		print str(leaderboard[2][0]) + " -- " + str(leaderboard[2][1])
-		print "4. "
-		print str(leaderboard[3][0]) + " -- " + str(leaderboard[3][1])
-		print "5. "
-		print str(leaderboard[4][0]) + " -- " + str(leaderboard[4][1])
+		print "1. " + str(leaderboard[0][0]) + " -- " + str(leaderboard[0][1])
+		print "2. " + str(leaderboard[1][0]) + " -- " + str(leaderboard[1][1])
+		print "3. " + str(leaderboard[2][0]) + " -- " + str(leaderboard[2][1])
+		print "4. " + str(leaderboard[3][0]) + " -- " + str(leaderboard[3][1])
+		print "5. " + str(leaderboard[4][0]) + " -- " + str(leaderboard[4][1])
 		#Moves on when user is ready
 		raw_input("Press anything to continue: ")
 		os.system('clear')
@@ -303,6 +327,26 @@ while True:
 		myfile.close()
 
 		myfile = open('5_Fifa.txt', 'w')
+		myfile.write(str(fifth))
+		myfile.close()
+
+		myfile = open('1_Name_Fifa.txt', 'w')
+		myfile.write(str(first))
+		myfile.close()
+
+		myfile = open('2_Name_Fifa.txt', 'w')
+		myfile.write(str(second))
+		myfile.close()
+
+		myfile = open('3_Name_Fifa.txt', 'w')
+		myfile.write(str(third))
+		myfile.close()
+
+		myfile = open('4_Name_Fifa.txt', 'w')
+		myfile.write(str(fourth))
+		myfile.close()
+
+		myfile = open('5_Name_Fifa.txt', 'w')
 		myfile.write(str(fifth))
 		myfile.close()
 
