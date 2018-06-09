@@ -154,10 +154,6 @@ while True:
 			print "F"
 			print "What are you, a rock?" '''
 
-		# Lets the user choose when to clear screen and go back to menu
-		raw_input("Press anything to continue: ")
-		os.system('clear')
-
 		# Update Leaderboard
 
 		if first < points:
@@ -195,6 +191,9 @@ while True:
 			myfile.close()
 			fifth_list[0] = name
 			print "You got 5th place!"
+	# Lets the user choose when to clear screen and go back to menu
+		raw_input("Press anything to continue: ")
+		os.system('clear')
 	#Same as the regular test, but it doesn't move to the next team if you are wrong and doesn't give the right answer if you are wrong
 	#Also doesn't affect leaderboard
 	if menu == "Repetition":

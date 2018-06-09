@@ -13,7 +13,7 @@ while True:
 	print "By Alexander Greco" 
 	
 	#Lets the user read status, take a test or leave
-	menu = raw_input("What do you want to do? (President test, Fifa Test, or Leave)")
+	menu = raw_input("What do you want to do? (President test, Fifa test, or Leave)")
 	
 	#Runs the President Test
 	if menu == "President test":
