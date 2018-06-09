@@ -149,7 +149,7 @@ while True:
 		print str(percent2) + "%"
 			
 		#Letter grade and funny comment
-		if points >= 40:
+'''		if points >= 40:
 			print "A+"
 			print "You are a Genius, or maybe just a cheater."
 		elif points >= 35:
@@ -175,7 +175,7 @@ while True:
 			print "You are an average American, try studying who the leaders of your own country were instead of watching TV!"
 		elif points >= 0:
 			print "F"
-			print "What are you, a rock?"
+			print "What are you, a rock?" '''
 			
 		#Lets the user choose when to clear screen and go back to menu
 		raw_input("Press anything to continue: ")

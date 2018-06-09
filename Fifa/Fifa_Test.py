@@ -126,7 +126,7 @@ while True:
 		print str(percent2) + "%"
 
 		# Letter grade and funny comment
-		if points >= 15:
+'''		if points >= 15:
 			print "A+"
 			print "You are a Genius, or maybe just a cheater."
 		elif points >= 13:
@@ -152,7 +152,7 @@ while True:
 			print "What kind of football do you think this is?"
 		elif points >= 0:
 			print "F"
-			print "What are you, a rock?"
+			print "What are you, a rock?" '''
 
 		# Lets the user choose when to clear screen and go back to menu
 		raw_input("Press anything to continue: ")
