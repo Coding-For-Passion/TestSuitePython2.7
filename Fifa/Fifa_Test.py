@@ -1,32 +1,30 @@
+#Copyright (c) 2018 Alexander Greco All Rights Reserved.
+
 #Import
 import os
 
-#Set window size and get rid of Script Terminal Auto-Prints
+# Set window size and get rid of Script Terminal Auto-Prints
 os.system('clear')
 raw_input("type anything to start: ")
 os.system('clear')
 
-#Register A_Points_Fifa
+# Register stored Leaderboard
 myfile = open('1_Fifa.txt', 'r')
 a = myfile.read()
 myfile.close()
 
-#Register O_Points
 myfile = open('2_Fifa.txt', 'r')
 b = myfile.read()
 myfile.close()
 
-#Register J_Points
 myfile = open('3_Fifa.txt', 'r')
 c = myfile.read()
 myfile.close()
 
-#Register V_Points
 myfile = open('4_Fifa.txt', 'r')
 d = myfile.read()
 myfile.close()
 
-#Register R_Points
 myfile = open('5_Fifa.txt', 'r')
 e = myfile.read()
 myfile.close()
@@ -38,14 +36,14 @@ third = int(c)
 fourth = int(d)
 fith = int(e)
 
-#loads the arrays for scoring
+# loads the arrays for Leaderboard
 first_list = ["First", first]
 second_list = [ "Second", second]
 third_list = [ "Third", third]
 fourth_list = ["Fourth", fourth]
 fifth_list = ["Fifth", fifth]
 
-#Array that stores the teams who won the Fifa World Cup in order
+# Array that stores the teams who won the Fifa World Cup in order
 teams = [
 "Uraguay",
 "Italy",
@@ -69,46 +67,46 @@ teams = [
 "Germany"
 ]
 
-#Main Program
+# Main Program
 
 while True:
-	
-	#Special Effects
+
+	# Special Effects
 	print "Fifa Quiz 1.1.0(2018 Standard Edition)"
-	print "By Alexander Greco" 
-	
-	#Lets the user read status or take the test
+	print "By Alexander Greco"
+
+	# Lets the user read status or take the test
 	menu = raw_input("What do you want to do? (Take the test, Study, Repitition, Read the leaderboard or Leave)")
-	
-	#If the user would like to test themself
+
+	# If the user would like to test themself
 	if menu == "Take the test":
-			
-		#test setting reset
+
+		# test setting reset
 		points = 0
 		i = 20;
-			
-		#loops through all the teams
+
+		# loops through all the teams
 		while i > 0:
 			QA = raw_input("Who won the " + str(i) + " Fifa World Cup?")
 			if QA == teams[i-1]:
 				print "Correct!"
 				points = points + 1
 			else:
-				print "WRONG!!!"	
+				print "WRONG!!!"
 				print teams[i-1]
 			i = i - 1
-			
-		#Scoring
-			
-		#Fraction
+
+		# Scoring
+
+		# Fraction
 		print str(points) + "/20"
-			
-		#Percent
+
+		# Percent
 		percent1 = float(points)/20.0
 		percent2 = int((percent1 * 100)+0.5)
 		print str(percent2) + "%"
-			
-		#Letter grade and funny comment
+
+		# Letter grade and funny comment
 		if points >= 15:
 			print "A+"
 			print "You are a Genius, or maybe just a cheater."
@@ -136,12 +134,12 @@ while True:
 		elif points >= 0:
 			print "F"
 			print "What are you, a rock?"
-			
-		#Lets the user choose when to clear screen and go back to menu
+
+		# Lets the user choose when to clear screen and go back to menu
 		raw_input("Press anything to continue: ")
 		os.system('clear')
-			
-		#Update scores
+
+		# Update Leaderboard
 
 		if first < points:
 			first = points
@@ -154,7 +152,7 @@ while True:
 			myfile.write(str(second))
 			myfile.close()
 		elif third < points:
-			third = points	
+			third = points
 			myfile = open('3_Fifa.txt', 'w')
 			myfile.write(str(third))
 			myfile.close()
@@ -167,9 +165,9 @@ while True:
 			fifth = points
 			myfile = open('5_Fifa.txt', 'w')
 			myfile.write(str(fifth))
-			myfile.close()	
+			myfile.close()
 	#Same as the regular test, but it doesn't move to the next team if you are wrong and doesn't give the right answer if you are wrong
-	#Also doesn't affect leaderboard 
+	#Also doesn't affect leaderboard
 	if menu == "Repetition":
 		while True:
 			ggez = raw_input("Are you ready? ")
@@ -185,13 +183,13 @@ while True:
 				print "Correct!"
 				i = i - 1
 			else:
-				print "WRONG!!!"	
+				print "WRONG!!!"
 		os.system('clear')
-	
+
 	#Same as the regular test, but it loops back through the test if the user do not reach a user set goal
-	#Also doesn't affect leaderboard 
+	#Also doesn't affect leaderboard
 	if menu == "Study":
-		
+
 		while True:
 			os.system("clear")
 			ggez = raw_input("Are you ready? ")
@@ -201,40 +199,40 @@ while True:
 				try:
 					target = int(target)
 					if target < 21:
-						if target > 0: 
-							break	
+						if target > 0:
+							break
 						else:
-							if target == 0: 
+							if target == 0:
 								print "What kind of goal is 0?"
-							else:	
+							else:
 								print "You can't have a negative goal, Silly!"
 					else:
-						print "There aren't that many teams, pick an integer value between 1 and 20"	
+						print "There aren't that many teams, pick an integer value between 1 and 20"
 					raw_input("Press anything to continue")
 				except ValueError:
 					print "Pick a integer, Dumbo!"
 					raw_input("Press anything to continue")
-					
+
 			if ggez == "Yes":
 				target = raw_input("What is your Goal? (How many teams you would like to get correct in this session) ")
 				try:
 					target = int(target)
 					if target < 21:
-						if target > 0: 
+						if target > 0:
 							break
 						else:
-							if target == 0: 
+							if target == 0:
 								print "What kind of goal is 0?"
-							else:	
+							else:
 								print "You can't have a negative goal, Silly!"
 					else:
 						print "There are not that many teams, pick a value between 1 and 20"
 					raw_input("Press anything to continue")
-							
+
 				except ValueError:
 					print "Pick a integer, Dumbo!"
 					raw_input("Press anything to continue")
-		os.system("clear")	
+		os.system("clear")
 		while True:
 			points = 0
 			i = 20;
@@ -244,7 +242,7 @@ while True:
 					print "Correct!"
 					points = points + 1
 				else:
-					print "WRONG!!!"	
+					print "WRONG!!!"
 					print teams[i-1]
 				i = i - 1
 			print str(points) + "/20"
@@ -255,20 +253,22 @@ while True:
 				break
 		raw_input("Press anything to continue: ")
 		os.system('clear')
-	
-	#Shows all of the scores in order
+
+	#Shows leaderboard
 	if menu == "Read the leaderboard": #Set the stats
 		first_list = ["First", first]
 		second_list = [ "Second", second]
 		third_list = [ "Third", third]
 		fourth_list = ["Fourth", fourth]
 		fifth_list = ["Fifth", fifth]
-		#Combine the stats
+
+		#Combine the Leaderboard
 		leaderboard = [first_list,
 		second_list,
 		third_list, fourth_list,
 		 fifth_list]
-		#Print out the stats(negative index is required so that the stats are flipped from asending order into descending order)
+
+		#Print out the Leaderboard
 		print "1. "
 		print str(leaderboard[0][0]) + " -- " + str(leaderboard[0][1])
 		print "2. "
@@ -282,10 +282,10 @@ while True:
 		#Moves on when user is ready
 		raw_input("Press anything to continue: ")
 		os.system('clear')
-	
-	#Saves current scores and quits program
+
+	# Saves current Leaderboard and quits program
 	if menu == "Leave":
-		
+
 		myfile = open('1_Fifa.txt', 'w')
 		myfile.write(str(first))
 		myfile.close()
@@ -305,5 +305,5 @@ while True:
 		myfile = open('5_Fifa.txt', 'w')
 		myfile.write(str(fifth))
 		myfile.close()
-		
+
 		break
